@@ -22,11 +22,18 @@ services:
     depends_on:
       - mysql
     ports:
-      - "9090:8089"
+      - "8089:8089"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/achatdb?useUnicode=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: achatuser
       SPRING_DATASOURCE_PASSWORD: cyka
+
+  frontend:
+    image: achatfrontend-chaherdridi
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
 
 volumes:
   mysql_data:
