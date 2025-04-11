@@ -54,6 +54,27 @@
 			<version>3.0.0</version>
 		</dependency>
 
+
+		<dependency>
+ 			<groupId>org.mockito</groupId>
+ 			<artifactId>mockito-junit-jupiter</artifactId>
+ 			<version>4.3.1</version>
+ 			<scope>test</scope>
+ 		</dependency>
+ 
+ 
+ 		<dependency>
+ 			<groupId>io.micrometer</groupId>
+ 			<artifactId>micrometer-registry-prometheus</artifactId>
+ 		</dependency>
+ 
+ 		<dependency>
+ 			<groupId>org.springframework.boot</groupId>
+ 			<artifactId>spring-boot-starter-actuator</artifactId>
+ 		</dependency>
+
+
+
 	</dependencies>
 
 	<build>
