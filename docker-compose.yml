@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   mysql:
     image: mysql:latest
@@ -10,30 +11,33 @@ services:
       MYSQL_USER: achatuser
       MYSQL_PASSWORD: cyka
     ports:
-      - "3307:3306"  # Change from 3306:3306 to 3307:3306
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-    command: --bind-address=0.0.0.0  # Allow remote connections
+    command: --bind-address=0.0.0.0
 
   backend:
-    image: achat-backend-chaherdridi-4twin9
+    image: dark9040/achat-backend
     container_name: backend-achat
     restart: always
     depends_on:
       - mysql
     ports:
       - "8089:8089"
+    volumes:
+      - ./logs:/logs
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/achatdb?useUnicode=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: achatuser
       SPRING_DATASOURCE_PASSWORD: cyka
 
   frontend:
-    image: achatfrontend-chaherdridi
+    image: dark9040/achatfrontend-chaherdridi
     ports:
       - "4200:4200"
     depends_on:
       - backend
-
+    volumes:
+      - ./logs/nginx:/var/log/nginx
 volumes:
   mysql_data:

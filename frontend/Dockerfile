@@ -1,26 +1,33 @@
-# Use a Node.js base image
-FROM node:18-alpine
+# Stage 1: Build Angular App
+FROM node:18-alpine AS builder
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json for installing dependencies
+# Only copy dependency files first
 COPY package*.json ./
 
 # Install dependencies
 RUN npm install --legacy-peer-deps --no-audit
 
-# Copy the rest of the project files
+# Copy project files and build
 COPY . .
-
-# Build the Angular app for production
 RUN npm run build --prod
 
-# Install http-server to serve the Angular app
+# Stage 2: Serve Angular App
+FROM node:18-alpine
+
+# Install http-server
 RUN npm install -g http-server
 
-# Expose port 4200
+# Set working directory
+WORKDIR /app
+
+# Copy built Angular app from builder stage
+COPY --from=builder /app/dist/achat-frontend /app
+
+# Expose port
 EXPOSE 4200
 
-# Serve the application using http-server
-CMD ["http-server", "-p", "4200", "-c-1", "dist/achat-frontend"]
+# Run the app
+CMD ["http-server", "-p", "4200", "-c-1"]
