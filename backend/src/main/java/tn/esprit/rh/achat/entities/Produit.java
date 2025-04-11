@@ -47,9 +47,27 @@ public class Produit implements Serializable {
 	@ManyToOne
 	@JsonIgnore
 	private CategorieProduit categorieProduit;
-	
+
+	public String getLibelleProduit() {
+		return libelleProduit;
+	}
+
+	public void setLibelleProduit(String libelleProduit) {
+		this.libelleProduit = libelleProduit;
+	}
 
 
-	
+	@Override
+	public String toString() {
+		return "Produit{" +
+				"idProduit=" + idProduit +
+				", libelle=" + libelleProduit +
+				", prix=" + prix +
+				'}';
+	}
+
+	public Long getIdProduit() {
+		return idProduit;
+	}
 
 }

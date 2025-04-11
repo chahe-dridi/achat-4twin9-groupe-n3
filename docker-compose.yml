@@ -34,7 +34,7 @@ services:
   frontend:
     image: dark9040/achatfrontend-chaherdridi
     ports:
-      - "4200:4200"
+      - "8082:80"
     depends_on:
       - backend
     volumes:
