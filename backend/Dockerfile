@@ -1,4 +1,4 @@
-FROM openjdk:17
-COPY target/*.jar app.jar
+FROM openjdk:17-jdk-alpine
 EXPOSE 8089
-ENTRYPOINT ["java", "-jar", "app.jar"]
+COPY target/achat-1.0.jar achat.jar
+ENTRYPOINT ["java","-jar","achat.jar"]
