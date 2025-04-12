@@ -9,9 +9,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>tn.esprit.rh</groupId>
-	<artifactId>achat</artifactId>
+	  <artifactId>achat-backend-chaherdridi-4twin9</artifactId> 
 	<version>1.0</version>
-	<name>achat</name>
+	<name>achat-backend-chaherdridi-4twin9-groupe-3</name>
 	<description>Projet pour le module DevOps</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -95,12 +95,12 @@
 		<repository>
 			<id>achat-backend-releases</id> <!-- Utilise l'ID correct -->
 			<name>Nexus Release Repository</name>
-			<url>http://localhost:8081/repository/achat-backend-sindachammem-4TWIN9-groupe-4/</url>
+			<url>http://localhost:8081/repository/achat-backend-chaherdridi-4twin9-groupe-3/</url>
 		</repository>
 		<snapshotRepository>
 			<id>achat-backend-snapshots</id>
 			<name>Nexus Snapshot Repository</name>
-			<url>http://localhost:8081/repository/achat-backend-sindachammem-4TWIN9-groupe-4/</url>
+			<url>http://localhost:8081/repository/achat-backend-chaherdridi-4twin9-groupe-3/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
