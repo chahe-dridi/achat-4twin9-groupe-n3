@@ -196,3 +196,8 @@
 2025-04-11 22:49:41.608  WARN 1 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2025-04-11 22:49:45.386  INFO 1 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path '/SpringMVC'
 2025-04-11 22:49:45.731  INFO 1 --- [main] tn.esprit.rh.achat.AchatApplication      : Started AchatApplication in 34.869 seconds (JVM running for 38.453)
+2025-04-11 23:16:10.999  INFO 1 --- [http-nio-8089-exec-2] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-11 23:16:11.000  INFO 1 --- [http-nio-8089-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-11 23:16:11.003  INFO 1 --- [http-nio-8089-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-04-11 23:16:11.132  INFO 1 --- [http-nio-8089-exec-2] t.e.r.achat.services.ProduitServiceImpl  : Fetching all products...
+2025-04-11 23:16:11.392 DEBUG 1 --- [http-nio-8089-exec-2] t.e.r.achat.services.ProduitServiceImpl  : Total products retrieved: 3
