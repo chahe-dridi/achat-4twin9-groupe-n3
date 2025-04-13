@@ -15,6 +15,7 @@ import { FactureComponent } from './facture/facture.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';  // Importer ngx-logger
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FournisseurComponent } from './fournisseur/fournisseur.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SecteurActiviteComponent,
     OperateurComponent,
     FactureComponent,
-    NavbarComponent
+    NavbarComponent,
+    FournisseurComponent
   ],
   imports: [
     BrowserModule,

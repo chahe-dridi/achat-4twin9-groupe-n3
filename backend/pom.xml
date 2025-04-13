@@ -9,7 +9,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>tn.esprit.rh</groupId>
-	  <artifactId>achat-backend-chaherdridi-4twin9</artifactId> 
+	  <artifactId>achat-backend-chaherdridi-4twin9</artifactId>
 	<version>1.0</version>
 	<name>achat-backend-chaherdridi-4twin9-groupe-3</name>
 	<description>Projet pour le module DevOps</description>
