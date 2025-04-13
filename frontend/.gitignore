@@ -43,3 +43,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Logs
+logs/
+
+# Docker
+docker-compose.override.yml

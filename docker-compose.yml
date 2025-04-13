@@ -32,7 +32,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: cyka
 
   frontend:
-    image: dark9040/achatfrontend-chaherdridi
+    image: achatfrontend-gofraneabidi-4twin9
     ports:
       - "4200:4200"
     depends_on:
