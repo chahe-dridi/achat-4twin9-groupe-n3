@@ -19,39 +19,64 @@ export class OperateurComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("Component initialized, fetching operateurs...");
     this.getAllOperateurs();
     this.operateur = {
-      idOperateur:null,
-      nom:null,
-      prenom:null,
-      password:null
+      idOperateur: null,
+      nom: null,
+      prenom: null,
+      password: null
     }
   }
 
   getAllOperateurs() {
-    this.operateurService.getAllOperateurs().subscribe(res => this.listOperateurs = res)
+    console.log("Fetching all operateurs...");
+    this.operateurService.getAllOperateurs().subscribe(res => {
+      console.log("Operateurs fetched successfully", res);
+      this.listOperateurs = res;
+    }, error => {
+      console.error("Error fetching operateurs", error);
+    });
   }
 
   addOperateur(o: any) {
+    console.log("Adding operateur", o);
     this.operateurService.addOperateur(o).subscribe(() => {
+      console.log("Operateur added successfully");
       this.getAllOperateurs();
       this.form = false;
+    }, error => {
+      console.error("Error adding operateur", error);
     });
   }
 
   editOperateur(operateur: Operateur) {
-    this.operateurService.editOperateur(operateur).subscribe();
+    console.log("Editing operateur", operateur);
+    this.operateurService.editOperateur(operateur).subscribe(() => {
+      console.log("Operateur edited successfully");
+    }, error => {
+      console.error("Error editing operateur", error);
+    });
   }
 
   deleteOperateur(idOperateur: any) {
-    this.operateurService.deleteOperateur(idOperateur).subscribe(() => this.getAllOperateurs())
+    console.log("Deleting operateur with id", idOperateur);
+    this.operateurService.deleteOperateur(idOperateur).subscribe(() => {
+      console.log("Operateur deleted successfully");
+      this.getAllOperateurs();
+    }, error => {
+      console.error("Error deleting operateur", error);
+    });
   }
 
   open(content: any, action: any) {
-    if (action != null)
-      this.operateur = action
-    else
+    if (action != null) {
+      console.log("Opening modal for editing operateur", action);
+      this.operateur = action;
+    } else {
+      console.log("Opening modal for adding new operateur");
       this.operateur = new Operateur();
+    }
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -70,6 +95,7 @@ export class OperateurComponent implements OnInit {
   }
 
   cancel() {
+    console.log("Canceling form");
     this.form = false;
   }
 }

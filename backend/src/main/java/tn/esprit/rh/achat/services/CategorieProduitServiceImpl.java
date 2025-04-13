@@ -10,13 +10,14 @@ import java.util.List;
 @Service
 public class CategorieProduitServiceImpl implements ICategorieProduitService {
 
-	
+
 	@Autowired
 	CategorieProduitRepository categorieProduitRepository;
 	@Override
 	public List<CategorieProduit> retrieveAllCategorieProduits() {
-		
+
 		return categorieProduitRepository.findAll();
+
 	}
 
 	@Override
@@ -28,7 +29,7 @@ public class CategorieProduitServiceImpl implements ICategorieProduitService {
 	@Override
 	public void deleteCategorieProduit(Long id) {
 		categorieProduitRepository.deleteById(id);
-		
+
 	}
 
 	@Override
