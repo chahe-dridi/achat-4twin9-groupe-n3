@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {Product} from '../shared/Model/Product';
 import {ProductService} from '../shared/Service/Product.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-products',

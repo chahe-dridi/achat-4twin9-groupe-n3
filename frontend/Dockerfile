@@ -1,33 +1,31 @@
-# Stage 1: Build Angular App
-FROM node:18-alpine AS builder
+# Étape 1 : Construction de l'application Angular
+FROM node:18 AS build
 
-# Set working directory
+# Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
-# Only copy dependency files first
-COPY package*.json ./
+# Copier package.json et package-lock.json pour installer les dépendances
+COPY package.json package-lock.json ./
 
-# Install dependencies
-RUN npm install --legacy-peer-deps --no-audit
+# Installer les dépendances, incluant Angular CLI globalement
+RUN npm install --legacy-peer-deps
+RUN npm install -g @angular/cli  # Installation globale de Angular CLI
 
-# Copy project files and build
+# Copier le reste des fichiers du projet Angular dans le conteneur
 COPY . .
-RUN npm run build --prod
 
-# Stage 2: Serve Angular App
-FROM node:18-alpine
+# Compiler l'application Angular (génère /app/dist)
+RUN export NODE_OPTIONS=--openssl-legacy-provider && ng build
 
-# Install http-server
-RUN npm install -g http-server
+# Étape 2 : Serveur Nginx pour héberger l'application
+FROM nginx:alpine
 
-# Set working directory
-WORKDIR /app
+# Copier les fichiers générés dans l'étape de build vers le répertoire de Nginx
+COPY --from=build /app/dist/achat-frontend /usr/share/nginx/html
 
-# Copy built Angular app from builder stage
-COPY --from=builder /app/dist/achat-frontend /app
+# Exposer le port 80 pour accéder à l'application
+EXPOSE 80
 
-# Expose port
-EXPOSE 4200
+# Commande pour démarrer Nginx
+CMD ["nginx", "-g", "daemon off;"]
 
-# Run the app
-CMD ["http-server", "-p", "4200", "-c-1"]
