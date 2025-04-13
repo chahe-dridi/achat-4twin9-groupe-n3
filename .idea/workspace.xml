@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcf803ab-f593-4b4d-b846-c1f2cc1f722f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/100755" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/.scannerwork/.sonar_lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/.scannerwork/report-task.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/sonar-project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/products/product.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/achat-backend.log.2025-04-11.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/nginx/access.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/nginx/error.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/achat-4twin9-groupe-n3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
@@ -24,10 +19,6 @@
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/tn/esprit/rh/achat/ProduitServiceImplMockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/tn/esprit/rh/achat/ProduitServiceImplMockTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/tn/esprit/rh/achat/ProduitServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/tn/esprit/rh/achat/ProduitServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/products/products.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/products/products.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/achat-backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/achat-backend.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +82,7 @@
       <workItem from="1744561495057" duration="18000" />
       <workItem from="1744561531310" duration="52000" />
       <workItem from="1744561594811" duration="157000" />
-      <workItem from="1744561851195" duration="1585000" />
+      <workItem from="1744561851195" duration="1887000" />
     </task>
     <servers />
   </component>
