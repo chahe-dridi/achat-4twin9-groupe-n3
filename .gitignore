@@ -6,3 +6,4 @@ frontend/.gitignore
 
 #docker-compose.yml
 docker-compose.yml
+logs/

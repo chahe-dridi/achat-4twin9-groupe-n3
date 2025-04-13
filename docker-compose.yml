@@ -6,38 +6,41 @@ services:
     container_name: mysql-achat
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: ashrefbouden  #
       MYSQL_DATABASE: achatdb
-      MYSQL_USER: achatuser
-      MYSQL_PASSWORD: cyka
+      MYSQL_USER: ashrefbouden  
+      MYSQL_PASSWORD: ashrefbouden  
     ports:
-      - "3307:3306"
+      - "3307:3306"  
     volumes:
       - mysql_data:/var/lib/mysql
-    command: --bind-address=0.0.0.0
+    command: --bind-address=0.0.0.0 
 
   backend:
-    image: dark9040/achat-backend-chaherdridi-4twin9
+    build:
+      context: ./backend  
+      dockerfile: Dockerfile  
     container_name: backend-achat
     restart: always
     depends_on:
       - mysql
     ports:
-      - "8089:8089"
+      - "8089:8089"  
     volumes:
       - ./logs:/logs
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/achatdb?useUnicode=true&serverTimezone=UTC
-      SPRING_DATASOURCE_USERNAME: achatuser
-      SPRING_DATASOURCE_PASSWORD: cyka
+      SPRING_DATASOURCE_USERNAME: ashrefbouden  
+      SPRING_DATASOURCE_PASSWORD: ashrefbouden  
 
   frontend:
-    image: dark9040/achatfrontend-chaherdridi
+    image: ashrefbouden/achatfrontend-achrefbouden
     ports:
-      - "8082:80"
+      - "8082:80"  
     depends_on:
       - backend
     volumes:
       - ./logs/nginx:/var/log/nginx
+
 volumes:
   mysql_data:
