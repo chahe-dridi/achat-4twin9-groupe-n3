@@ -32,6 +32,13 @@ build/
 ### VS Code ###
 .vscode/
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+# Docker Compose
+docker-compose.yml
+=======
 Dockerfile
+>>>>>>> 710225aabfc3e2caf4e4d7cb3f8aa5a092a046a7
+=======
 
- 
+>>>>>>> gofraneabidi-4Twin9-groupe-n3

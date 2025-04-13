@@ -1,26 +1,31 @@
-# Use a Node.js base image
-FROM node:18-alpine
+# Étape 1 : Construction de l'application Angular
+FROM node:18 AS build
 
-# Set the working directory
+# Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
-# Copy package.json and package-lock.json for installing dependencies
-COPY package*.json ./
+# Copier package.json et package-lock.json pour installer les dépendances
+COPY package.json package-lock.json ./
 
-# Install dependencies
-RUN npm install --legacy-peer-deps --no-audit
+# Installer les dépendances, incluant Angular CLI globalement
+RUN npm install --legacy-peer-deps
+RUN npm install -g @angular/cli  # Installation globale de Angular CLI
 
-# Copy the rest of the project files
+# Copier le reste des fichiers du projet Angular dans le conteneur
 COPY . .
 
-# Build the Angular app for production
-RUN npm run build --prod
+# Compiler l'application Angular (génère /app/dist)
+RUN export NODE_OPTIONS=--openssl-legacy-provider && ng build
 
-# Install http-server to serve the Angular app
-RUN npm install -g http-server
+# Étape 2 : Serveur Nginx pour héberger l'application
+FROM nginx:alpine
 
-# Expose port 4200
-EXPOSE 4200
+# Copier les fichiers générés dans l'étape de build vers le répertoire de Nginx
+COPY --from=build /app/dist/achat-frontend /usr/share/nginx/html
 
-# Serve the application using http-server
-CMD ["http-server", "-p", "4200", "-c-1", "dist/achat-frontend"]
+# Exposer le port 80 pour accéder à l'application
+EXPOSE 80
+
+# Commande pour démarrer Nginx
+CMD ["nginx", "-g", "daemon off;"]
+

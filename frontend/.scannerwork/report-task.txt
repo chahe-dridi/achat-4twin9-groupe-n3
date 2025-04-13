@@ -1,0 +1,6 @@
+projectKey=achat-frontend-chaherdridi-4twin9-groupe-3
+serverUrl=http://localhost:9000
+serverVersion=25.4.0.105899
+dashboardUrl=http://localhost:9000/dashboard?id=achat-frontend-chaherdridi-4twin9-groupe-3
+ceTaskId=58fc5db0-9cd4-42c8-83db-42d5f283f6c4
+ceTaskUrl=http://localhost:9000/api/ce/task?id=58fc5db0-9cd4-42c8-83db-42d5f283f6c4

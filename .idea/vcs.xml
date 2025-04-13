@@ -1,6 +1,23 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f76411cef0eacc6097bf5dd38975a387f12f19d7
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+<<<<<<< HEAD
   </component>
+=======
+    <mapping directory="$PROJECT_DIR$/backend" vcs="Git" />
+  </component>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/backend" vcs="Git" />
+  </component>
+>>>>>>> gofraneabidi-4Twin9-groupe-n3
+>>>>>>> f76411cef0eacc6097bf5dd38975a387f12f19d7
 </project>
