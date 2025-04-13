@@ -20,6 +20,7 @@ services:
     build:
       context: ./backend  
       dockerfile: Dockerfile  
+    image: ashrefbouden/achat-backend-ashrefbouden-4twin9
     container_name: backend-achat
     restart: always
     depends_on:
@@ -34,7 +35,8 @@ services:
       SPRING_DATASOURCE_PASSWORD: ashrefbouden  
 
   frontend:
-    image: ashrefbouden/achatfrontend-achrefbouden
+    image: ashrefbouden/achat-frontend-ashrefbouden-4twin9
+    container_name: frontend-achat
     ports:
       - "8082:80"  
     depends_on:
