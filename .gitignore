@@ -4,4 +4,4 @@ backend/.gitignore
 # Include frontend .gitignore
 frontend/.gitignore
 
-#docker-compose.yml
+docker-compose.yml
