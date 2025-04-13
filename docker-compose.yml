@@ -17,7 +17,7 @@ services:
     command: --bind-address=0.0.0.0
 
   backend:
-    image: dark9040/achat-backend-chaherdridi-4twin9
+    image: dark9040/achat-backend
     container_name: backend-achat
     restart: always
     depends_on:
