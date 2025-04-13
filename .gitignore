@@ -1,18 +1,11 @@
-<<<<<<< HEAD
 logs/application.log
-=======
+
 # Include backend .gitignore
 backend/.gitignore
 
 # Include frontend .gitignore
 frontend/.gitignore
 
-#docker-compose.yml
 
-<<<<<<< HEAD
 docker-compose.yml
-=======
-docker-compose.yml
-
->>>>>>> f76411cef0eacc6097bf5dd38975a387f12f19d7
->>>>>>> 8e58a584a2f2eeecfe9b7db4b16cdd38d838cc25
+logs/
