@@ -17,7 +17,12 @@ services:
     command: --bind-address=0.0.0.0
 
   backend:
+<<<<<<< HEAD
+    image: khouloudbelhadj/achat-backend-belhadjkhouloud-4twin9
+=======
     image: dark9040/achat-backend-chaherdridi-4twin9
+
+>>>>>>> f76411cef0eacc6097bf5dd38975a387f12f19d7
     container_name: backend-achat
     restart: always
     depends_on:
@@ -32,7 +37,11 @@ services:
       SPRING_DATASOURCE_PASSWORD: cyka
 
   frontend:
+<<<<<<< HEAD
+    image: khouloudbelhadj/achat-backend-belhadjkhouloud-4twin9
+=======
     image: dark9040/achatfrontend-chaherdridi
+>>>>>>> f76411cef0eacc6097bf5dd38975a387f12f19d7
     ports:
       - "8082:80"
     depends_on:
@@ -40,4 +49,9 @@ services:
     volumes:
       - ./logs/nginx:/var/log/nginx
 volumes:
+<<<<<<< HEAD
   mysql_data:
+=======
+  mysql_data:
+
+>>>>>>> f76411cef0eacc6097bf5dd38975a387f12f19d7
