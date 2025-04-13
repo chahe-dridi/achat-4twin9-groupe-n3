@@ -1,7 +1,1 @@
-# Include backend .gitignore
-backend/.gitignore
-
-# Include frontend .gitignore
-frontend/.gitignore
-
-#docker-compose.yml
+logs/application.log
