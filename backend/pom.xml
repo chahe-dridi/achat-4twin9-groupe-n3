@@ -81,17 +81,18 @@
     </dependencies>
 
     <distributionManagement>
-        <repository>
-            <id>achat-backend-releases</id>
-            <name>Nexus Release Repository</name>
-            <url>http://localhost:8081/repository/achat-backend-chaherdridi-4twin9-groupe-3/</url>
-        </repository>
-        <snapshotRepository>
-            <id>achat-backend-snapshots</id>
-            <name>Nexus Snapshot Repository</name>
-            <url>http://localhost:8081/repository/achat-backend-chaherdridi-4twin9-groupe-3/</url>
-        </snapshotRepository>
-    </distributionManagement>
+    <repository>
+        <id>achat-backend-releases</id>
+        <name>Nexus Release Repository</name>
+        <url>http://localhost:8081/repository/achat-backend-chaherdridi-4twin9-groupe-3/</url>
+    </repository>
+    <snapshotRepository>
+        <id>achat-backend-snapshots</id>
+        <name>Nexus Snapshot Repository</name>
+        <url>http://localhost:8081/repository/achat-backend-chaherdridi-4twin9-groupe-3/</url>
+    </snapshotRepository>
+	</distributionManagement>
+
 
     <build>
         <plugins>
