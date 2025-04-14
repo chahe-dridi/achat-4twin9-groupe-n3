@@ -1,21 +1,20 @@
 # Étape 1 : Construction de l'application Angular
-FROM node:18 AS build
+FROM node:16 AS build
 
 # Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
 # Copier package.json et package-lock.json pour installer les dépendances
-COPY package.json package-lock.json ./
+COPY package*.json ./
 
-# Installer les dépendances, incluant Angular CLI globalement
-RUN npm install --legacy-peer-deps
-RUN npm install -g @angular/cli  # Installation globale de Angular CLI
+# Installer les dépendances
+RUN npm install
 
 # Copier le reste des fichiers du projet Angular dans le conteneur
 COPY . .
 
 # Compiler l'application Angular (génère /app/dist)
-RUN export NODE_OPTIONS=--openssl-legacy-provider && ng build
+RUN npm run build
 
 # Étape 2 : Serveur Nginx pour héberger l'application
 FROM nginx:alpine
@@ -28,4 +27,3 @@ EXPOSE 80
 
 # Commande pour démarrer Nginx
 CMD ["nginx", "-g", "daemon off;"]
-

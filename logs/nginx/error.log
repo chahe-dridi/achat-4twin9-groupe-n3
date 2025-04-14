@@ -259,3 +259,243 @@
 2025/04/12 18:30:53 [notice] 1#1: start worker process 35
 2025/04/12 18:30:53 [notice] 1#1: start worker process 36
 2025/04/12 18:30:53 [notice] 1#1: start worker process 37
+2025/04/14 13:38:54 [notice] 1#1: using the "epoll" event method
+2025/04/14 13:38:54 [notice] 1#1: nginx/1.27.4
+2025/04/14 13:38:54 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/04/14 13:38:54 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/04/14 13:38:54 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/04/14 13:38:54 [notice] 1#1: start worker processes
+2025/04/14 13:38:54 [notice] 1#1: start worker process 30
+2025/04/14 13:38:54 [notice] 1#1: start worker process 31
+2025/04/14 13:38:54 [notice] 1#1: start worker process 32
+2025/04/14 13:38:54 [notice] 1#1: start worker process 33
+2025/04/14 13:38:54 [notice] 1#1: start worker process 34
+2025/04/14 13:38:54 [notice] 1#1: start worker process 35
+2025/04/14 13:38:54 [notice] 1#1: start worker process 36
+2025/04/14 13:38:54 [notice] 1#1: start worker process 37
+2025/04/14 13:39:32 [error] 30#30: *1 open() "/usr/share/nginx/html/secteurActivite" failed (2: No such file or directory), client: 172.25.0.1, server: localhost, request: "GET /secteurActivite HTTP/1.1", host: "localhost:8082"
+2025/04/14 13:39:33 [error] 32#32: *3 open() "/usr/share/nginx/html/secteurActivite" failed (2: No such file or directory), client: 172.25.0.1, server: localhost, request: "GET /secteurActivite HTTP/1.1", host: "localhost:8082"
+2025/04/14 13:39:36 [error] 32#32: *3 open() "/usr/share/nginx/html/product" failed (2: No such file or directory), client: 172.25.0.1, server: localhost, request: "GET /product HTTP/1.1", host: "localhost:8082"
+2025/04/14 14:32:54 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/04/14 14:32:54 [notice] 33#33: gracefully shutting down
+2025/04/14 14:32:54 [notice] 30#30: gracefully shutting down
+2025/04/14 14:32:54 [notice] 31#31: gracefully shutting down
+2025/04/14 14:32:54 [notice] 32#32: gracefully shutting down
+2025/04/14 14:32:54 [notice] 34#34: gracefully shutting down
+2025/04/14 14:32:54 [notice] 36#36: gracefully shutting down
+2025/04/14 14:32:54 [notice] 35#35: gracefully shutting down
+2025/04/14 14:32:54 [notice] 33#33: exiting
+2025/04/14 14:32:54 [notice] 37#37: gracefully shutting down
+2025/04/14 14:32:54 [notice] 30#30: exiting
+2025/04/14 14:32:54 [notice] 31#31: exiting
+2025/04/14 14:32:54 [notice] 34#34: exiting
+2025/04/14 14:32:54 [notice] 37#37: exiting
+2025/04/14 14:32:54 [notice] 32#32: exiting
+2025/04/14 14:32:54 [notice] 36#36: exiting
+2025/04/14 14:32:54 [notice] 35#35: exiting
+2025/04/14 14:32:54 [notice] 36#36: exit
+2025/04/14 14:32:54 [notice] 33#33: exit
+2025/04/14 14:32:54 [notice] 30#30: exit
+2025/04/14 14:32:54 [notice] 31#31: exit
+2025/04/14 14:32:54 [notice] 34#34: exit
+2025/04/14 14:32:54 [notice] 37#37: exit
+2025/04/14 14:32:54 [notice] 32#32: exit
+2025/04/14 14:32:54 [notice] 35#35: exit
+2025/04/14 14:32:54 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2025/04/14 14:32:54 [notice] 1#1: worker process 32 exited with code 0
+2025/04/14 14:32:54 [notice] 1#1: worker process 33 exited with code 0
+2025/04/14 14:32:54 [notice] 1#1: worker process 35 exited with code 0
+2025/04/14 14:32:54 [notice] 1#1: worker process 37 exited with code 0
+2025/04/14 14:32:54 [notice] 1#1: signal 29 (SIGIO) received
+2025/04/14 14:32:54 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2025/04/14 14:32:54 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2025/04/14 14:32:54 [notice] 1#1: worker process 31 exited with code 0
+2025/04/14 14:32:54 [notice] 1#1: signal 29 (SIGIO) received
+2025/04/14 14:32:54 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/04/14 14:32:54 [notice] 1#1: worker process 30 exited with code 0
+2025/04/14 14:32:54 [notice] 1#1: worker process 34 exited with code 0
+2025/04/14 14:32:54 [notice] 1#1: worker process 36 exited with code 0
+2025/04/14 14:32:54 [notice] 1#1: exit
+2025/04/14 14:46:07 [notice] 1#1: using the "epoll" event method
+2025/04/14 14:46:07 [notice] 1#1: nginx/1.27.4
+2025/04/14 14:46:07 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/04/14 14:46:07 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/04/14 14:46:07 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/04/14 14:46:07 [notice] 1#1: start worker processes
+2025/04/14 14:46:07 [notice] 1#1: start worker process 30
+2025/04/14 14:46:07 [notice] 1#1: start worker process 31
+2025/04/14 14:46:07 [notice] 1#1: start worker process 32
+2025/04/14 14:46:07 [notice] 1#1: start worker process 33
+2025/04/14 14:46:07 [notice] 1#1: start worker process 34
+2025/04/14 14:46:07 [notice] 1#1: start worker process 35
+2025/04/14 14:46:07 [notice] 1#1: start worker process 36
+2025/04/14 14:46:07 [notice] 1#1: start worker process 37
+2025/04/14 15:06:48 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/04/14 15:06:48 [notice] 32#32: gracefully shutting down
+2025/04/14 15:06:48 [notice] 33#33: gracefully shutting down
+2025/04/14 15:06:48 [notice] 32#32: exiting
+2025/04/14 15:06:48 [notice] 30#30: gracefully shutting down
+2025/04/14 15:06:48 [notice] 35#35: gracefully shutting down
+2025/04/14 15:06:48 [notice] 31#31: gracefully shutting down
+2025/04/14 15:06:48 [notice] 36#36: gracefully shutting down
+2025/04/14 15:06:48 [notice] 34#34: gracefully shutting down
+2025/04/14 15:06:48 [notice] 37#37: gracefully shutting down
+2025/04/14 15:06:48 [notice] 33#33: exiting
+2025/04/14 15:06:48 [notice] 30#30: exiting
+2025/04/14 15:06:48 [notice] 35#35: exiting
+2025/04/14 15:06:48 [notice] 36#36: exiting
+2025/04/14 15:06:48 [notice] 31#31: exiting
+2025/04/14 15:06:48 [notice] 32#32: exit
+2025/04/14 15:06:48 [notice] 34#34: exiting
+2025/04/14 15:06:48 [notice] 33#33: exit
+2025/04/14 15:06:48 [notice] 34#34: exit
+2025/04/14 15:06:48 [notice] 37#37: exiting
+2025/04/14 15:06:48 [notice] 30#30: exit
+2025/04/14 15:06:48 [notice] 35#35: exit
+2025/04/14 15:06:48 [notice] 36#36: exit
+2025/04/14 15:06:48 [notice] 31#31: exit
+2025/04/14 15:06:48 [notice] 37#37: exit
+2025/04/14 15:06:48 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2025/04/14 15:06:48 [notice] 1#1: worker process 34 exited with code 0
+2025/04/14 15:06:48 [notice] 1#1: worker process 36 exited with code 0
+2025/04/14 15:06:48 [notice] 1#1: signal 29 (SIGIO) received
+2025/04/14 15:06:48 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2025/04/14 15:06:48 [notice] 1#1: worker process 32 exited with code 0
+2025/04/14 15:06:48 [notice] 1#1: worker process 37 exited with code 0
+2025/04/14 15:06:48 [notice] 1#1: signal 29 (SIGIO) received
+2025/04/14 15:06:48 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2025/04/14 15:06:48 [notice] 1#1: worker process 30 exited with code 0
+2025/04/14 15:06:48 [notice] 1#1: worker process 31 exited with code 0
+2025/04/14 15:06:48 [notice] 1#1: worker process 33 exited with code 0
+2025/04/14 15:06:48 [notice] 1#1: worker process 35 exited with code 0
+2025/04/14 15:06:48 [notice] 1#1: exit
+2025/04/14 15:53:05 [notice] 1#1: using the "epoll" event method
+2025/04/14 15:53:05 [notice] 1#1: nginx/1.27.4
+2025/04/14 15:53:05 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/04/14 15:53:05 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/04/14 15:53:05 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/04/14 15:53:05 [notice] 1#1: start worker processes
+2025/04/14 15:53:05 [notice] 1#1: start worker process 30
+2025/04/14 15:53:05 [notice] 1#1: start worker process 31
+2025/04/14 15:53:05 [notice] 1#1: start worker process 32
+2025/04/14 15:53:05 [notice] 1#1: start worker process 33
+2025/04/14 15:53:05 [notice] 1#1: start worker process 34
+2025/04/14 15:53:05 [notice] 1#1: start worker process 35
+2025/04/14 15:53:05 [notice] 1#1: start worker process 36
+2025/04/14 15:53:05 [notice] 1#1: start worker process 37
+2025/04/14 15:54:56 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/04/14 15:54:56 [notice] 30#30: gracefully shutting down
+2025/04/14 15:54:56 [notice] 37#37: gracefully shutting down
+2025/04/14 15:54:56 [notice] 31#31: gracefully shutting down
+2025/04/14 15:54:56 [notice] 32#32: gracefully shutting down
+2025/04/14 15:54:56 [notice] 33#33: gracefully shutting down
+2025/04/14 15:54:56 [notice] 34#34: gracefully shutting down
+2025/04/14 15:54:56 [notice] 36#36: gracefully shutting down
+2025/04/14 15:54:56 [notice] 35#35: gracefully shutting down
+2025/04/14 15:54:56 [notice] 30#30: exiting
+2025/04/14 15:54:56 [notice] 37#37: exiting
+2025/04/14 15:54:56 [notice] 31#31: exiting
+2025/04/14 15:54:56 [notice] 32#32: exiting
+2025/04/14 15:54:56 [notice] 33#33: exiting
+2025/04/14 15:54:56 [notice] 34#34: exiting
+2025/04/14 15:54:56 [notice] 36#36: exiting
+2025/04/14 15:54:56 [notice] 35#35: exiting
+2025/04/14 15:54:56 [notice] 30#30: exit
+2025/04/14 15:54:56 [notice] 37#37: exit
+2025/04/14 15:54:56 [notice] 31#31: exit
+2025/04/14 15:54:56 [notice] 32#32: exit
+2025/04/14 15:54:56 [notice] 33#33: exit
+2025/04/14 15:54:56 [notice] 34#34: exit
+2025/04/14 15:54:56 [notice] 36#36: exit
+2025/04/14 15:54:56 [notice] 35#35: exit
+2025/04/14 15:54:56 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2025/04/14 15:54:56 [notice] 1#1: worker process 33 exited with code 0
+2025/04/14 15:54:56 [notice] 1#1: worker process 36 exited with code 0
+2025/04/14 15:54:56 [notice] 1#1: worker process 37 exited with code 0
+2025/04/14 15:54:56 [notice] 1#1: signal 29 (SIGIO) received
+2025/04/14 15:54:56 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2025/04/14 15:54:56 [notice] 1#1: worker process 30 exited with code 0
+2025/04/14 15:54:56 [notice] 1#1: signal 29 (SIGIO) received
+2025/04/14 15:54:56 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2025/04/14 15:54:56 [notice] 1#1: worker process 31 exited with code 0
+2025/04/14 15:54:56 [notice] 1#1: worker process 32 exited with code 0
+2025/04/14 15:54:56 [notice] 1#1: worker process 34 exited with code 0
+2025/04/14 15:54:56 [notice] 1#1: worker process 35 exited with code 0
+2025/04/14 15:54:56 [notice] 1#1: exit
+2025/04/14 16:37:15 [notice] 1#1: using the "epoll" event method
+2025/04/14 16:37:15 [notice] 1#1: nginx/1.27.4
+2025/04/14 16:37:15 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/04/14 16:37:15 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/04/14 16:37:15 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/04/14 16:37:15 [notice] 1#1: start worker processes
+2025/04/14 16:37:15 [notice] 1#1: start worker process 31
+2025/04/14 16:37:15 [notice] 1#1: start worker process 32
+2025/04/14 16:37:15 [notice] 1#1: start worker process 33
+2025/04/14 16:37:15 [notice] 1#1: start worker process 34
+2025/04/14 16:37:15 [notice] 1#1: start worker process 35
+2025/04/14 16:37:15 [notice] 1#1: start worker process 36
+2025/04/14 16:37:15 [notice] 1#1: start worker process 37
+2025/04/14 16:37:15 [notice] 1#1: start worker process 38
+2025/04/14 16:42:38 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/04/14 16:42:38 [notice] 31#31: gracefully shutting down
+2025/04/14 16:42:38 [notice] 32#32: gracefully shutting down
+2025/04/14 16:42:38 [notice] 36#36: gracefully shutting down
+2025/04/14 16:42:38 [notice] 33#33: gracefully shutting down
+2025/04/14 16:42:38 [notice] 32#32: exiting
+2025/04/14 16:42:38 [notice] 37#37: gracefully shutting down
+2025/04/14 16:42:38 [notice] 35#35: gracefully shutting down
+2025/04/14 16:42:38 [notice] 38#38: gracefully shutting down
+2025/04/14 16:42:38 [notice] 34#34: gracefully shutting down
+2025/04/14 16:42:38 [notice] 31#31: exiting
+2025/04/14 16:42:38 [notice] 31#31: exit
+2025/04/14 16:42:38 [notice] 36#36: exiting
+2025/04/14 16:42:38 [notice] 33#33: exiting
+2025/04/14 16:42:38 [notice] 33#33: exit
+2025/04/14 16:42:38 [notice] 35#35: exiting
+2025/04/14 16:42:38 [notice] 35#35: exit
+2025/04/14 16:42:38 [notice] 37#37: exiting
+2025/04/14 16:42:38 [notice] 38#38: exiting
+2025/04/14 16:42:38 [notice] 32#32: exit
+2025/04/14 16:42:38 [notice] 36#36: exit
+2025/04/14 16:42:38 [notice] 34#34: exiting
+2025/04/14 16:42:38 [notice] 37#37: exit
+2025/04/14 16:42:38 [notice] 38#38: exit
+2025/04/14 16:42:38 [notice] 34#34: exit
+2025/04/14 16:42:38 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2025/04/14 16:42:38 [notice] 1#1: worker process 31 exited with code 0
+2025/04/14 16:42:38 [notice] 1#1: worker process 35 exited with code 0
+2025/04/14 16:42:38 [notice] 1#1: worker process 37 exited with code 0
+2025/04/14 16:42:38 [notice] 1#1: signal 29 (SIGIO) received
+2025/04/14 16:42:38 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2025/04/14 16:42:38 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2025/04/14 16:42:38 [notice] 1#1: worker process 32 exited with code 0
+2025/04/14 16:42:38 [notice] 1#1: worker process 33 exited with code 0
+2025/04/14 16:42:38 [notice] 1#1: signal 29 (SIGIO) received
+2025/04/14 16:42:38 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2025/04/14 16:42:38 [notice] 1#1: worker process 36 exited with code 0
+2025/04/14 16:42:38 [notice] 1#1: worker process 38 exited with code 0
+2025/04/14 16:42:38 [notice] 1#1: signal 29 (SIGIO) received
+2025/04/14 16:42:38 [notice] 1#1: signal 17 (SIGCHLD) received from 38
+2025/04/14 16:42:38 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2025/04/14 16:42:38 [notice] 1#1: worker process 34 exited with code 0
+2025/04/14 16:42:38 [notice] 1#1: exit
+2025/04/14 16:42:55 [notice] 1#1: using the "epoll" event method
+2025/04/14 16:42:55 [notice] 1#1: nginx/1.27.4
+2025/04/14 16:42:55 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+2025/04/14 16:42:55 [notice] 1#1: OS: Linux 5.15.167.4-microsoft-standard-WSL2
+2025/04/14 16:42:55 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/04/14 16:42:55 [notice] 1#1: start worker processes
+2025/04/14 16:42:55 [notice] 1#1: start worker process 31
+2025/04/14 16:42:55 [notice] 1#1: start worker process 32
+2025/04/14 16:42:55 [notice] 1#1: start worker process 33
+2025/04/14 16:42:55 [notice] 1#1: start worker process 34
+2025/04/14 16:42:55 [notice] 1#1: start worker process 35
+2025/04/14 16:42:55 [notice] 1#1: start worker process 36
+2025/04/14 16:42:55 [notice] 1#1: start worker process 37
+2025/04/14 16:42:55 [notice] 1#1: start worker process 38
+2025/04/14 16:45:10 [error] 31#31: *2 open() "/usr/share/nginx/html/secteurActivite" failed (2: No such file or directory), client: 172.21.0.1, server: localhost, request: "GET /secteurActivite HTTP/1.1", host: "localhost:8082"
+2025/04/14 16:45:11 [error] 33#33: *3 open() "/usr/share/nginx/html/secteurActivite" failed (2: No such file or directory), client: 172.21.0.1, server: localhost, request: "GET /secteurActivite HTTP/1.1", host: "localhost:8082"
+2025/04/14 16:45:17 [error] 33#33: *3 open() "/usr/share/nginx/html/product" failed (2: No such file or directory), client: 172.21.0.1, server: localhost, request: "GET /product HTTP/1.1", host: "localhost:8082"
+2025/04/14 18:37:21 [error] 36#36: *4 open() "/usr/share/nginx/html/secteurActivite" failed (2: No such file or directory), client: 172.21.0.1, server: localhost, request: "GET /secteurActivite HTTP/1.1", host: "localhost:8082"
+2025/04/14 18:37:22 [error] 35#35: *6 open() "/usr/share/nginx/html/secteurActivite" failed (2: No such file or directory), client: 172.21.0.1, server: localhost, request: "GET /secteurActivite HTTP/1.1", host: "localhost:8082"
+2025/04/14 18:37:25 [error] 35#35: *6 open() "/usr/share/nginx/html/product" failed (2: No such file or directory), client: 172.21.0.1, server: localhost, request: "GET /product HTTP/1.1", host: "localhost:8082"

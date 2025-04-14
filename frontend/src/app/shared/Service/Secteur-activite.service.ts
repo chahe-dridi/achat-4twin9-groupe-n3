@@ -88,3 +88,18 @@ export class SecteurActiviteService {
     );
   }
 }
+
+// 🔽 TEST UNITAIRE 🔽
+import { TestBed } from '@angular/core/testing';
+
+describe('SecteurActiviteService', () => {
+  let service: any;
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(SecteurActiviteService);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+});

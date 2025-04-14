@@ -1,20 +1,26 @@
-<<<<<<< HEAD
+# Use the Maven base image to build the application
+FROM maven:3.8.4-openjdk-17-slim as builder
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the source code
+COPY . /app/
+
+# Run Maven build to package the application (using the image's Maven directly)
+RUN mvn clean package -DskipTests
+
+# Use OpenJDK to run the packaged JAR
 FROM openjdk:17-jdk-alpine
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the packaged JAR from the builder stage
+COPY --from=builder /app/target/achat-backend-*.jar achat-backend.jar
+
+# Expose the port the app runs on
 EXPOSE 8089
-<<<<<<< HEAD
-COPY target/achat-1.0.jar achat.jar
-=======
-FROM openjdk:17-jdk-alpine
-EXPOSE 8089
-<<<<<<< HEAD
-COPY taget/achat-backend-belhadjkhouloud-4twin9-1.0.jar achat.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
-=======
-COPY target/achat-backend-chaherdridi-4twin9-1.0.jar achat.jar
->>>>>>> 710225aabfc3e2caf4e4d7cb3f8aa5a092a046a7
-ENTRYPOINT ["java","-jar","achat.jar"]
-=======
-COPY target/achat-backend-chaherdridi-4twin9-1.0.jar achat.jar
-ENTRYPOINT ["java","-jar","achat.jar"]
->>>>>>> gofraneabidi-4Twin9-groupe-n3
->>>>>>> f76411cef0eacc6097bf5dd38975a387f12f19d7
+
+# Command to run the app
+ENTRYPOINT ["java", "-jar", "achat-backend.jar"]

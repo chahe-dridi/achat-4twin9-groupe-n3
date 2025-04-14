@@ -6,12 +6,12 @@ services:
     container_name: mysql-achat
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: ashrefbouden  #
+      MYSQL_ROOT_PASSWORD: ashrefbouden
       MYSQL_DATABASE: achatdb
       MYSQL_USER: ashrefbouden  
       MYSQL_PASSWORD: ashrefbouden  
     ports:
-      - "3307:3306"  
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     command: --bind-address=0.0.0.0 
@@ -26,7 +26,7 @@ services:
     depends_on:
       - mysql
     ports:
-      - "8089:8089"  
+      - "8089:8089"
     volumes:
       - ./logs:/logs
     environment:
@@ -38,11 +38,77 @@ services:
     image: ashrefbouden/achat-frontend-ashrefbouden-4twin9
     container_name: frontend-achat
     ports:
-      - "8082:80"  
+      - "8082:80"
     depends_on:
       - backend
     volumes:
       - ./logs/nginx:/var/log/nginx
 
+  sonarqube:
+    image: sonarqube:latest
+    container_name: sonarqube
+    restart: always
+    ports:
+      - "9000:9000"
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    environment:
+      SONARQUBE_JDBC_URL: jdbc:mysql://mysql:3306/sonarqube?useUnicode=true&serverTimezone=UTC
+      SONARQUBE_JDBC_USERNAME: ashrefbouden
+      SONARQUBE_JDBC_PASSWORD: ashrefbouden
+
+  nexus:
+    image: sonatype/nexus3
+    container_name: nexus
+    restart: always
+    ports:
+      - "8081:8081"
+    volumes:
+      - nexus_data:/nexus-data
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    restart: always
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    restart: always
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+
 volumes:
   mysql_data:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
+  nexus_data:
+  jenkins_home:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  default:
+    driver: bridge
