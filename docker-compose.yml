@@ -8,18 +8,20 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ashrefbouden
       MYSQL_DATABASE: achatdb
-      MYSQL_USER: ashrefbouden  
-      MYSQL_PASSWORD: ashrefbouden  
+      MYSQL_USER: ashrefbouden
+      MYSQL_PASSWORD: ashrefbouden
     ports:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-    command: --bind-address=0.0.0.0 
+    command: --bind-address=0.0.0.0
+    networks:
+      - achat-network
 
   backend:
     build:
-      context: ./backend  
-      dockerfile: Dockerfile  
+      context: ./backend
+      dockerfile: Dockerfile
     image: ashrefbouden/achat-backend-ashrefbouden-4twin9
     container_name: backend-achat
     restart: always
@@ -30,9 +32,11 @@ services:
     volumes:
       - ./logs:/logs
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/achatdb?useUnicode=true&serverTimezone=UTC
-      SPRING_DATASOURCE_USERNAME: ashrefbouden  
-      SPRING_DATASOURCE_PASSWORD: ashrefbouden  
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-achat:3306/achatdb?useUnicode=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: ashrefbouden
+      SPRING_DATASOURCE_PASSWORD: ashrefbouden
+    networks:
+      - achat-network
 
   frontend:
     image: ashrefbouden/achat-frontend-ashrefbouden-4twin9
@@ -43,6 +47,8 @@ services:
       - backend
     volumes:
       - ./logs/nginx:/var/log/nginx
+    networks:
+      - achat-network
 
   sonarqube:
     image: sonarqube:latest
@@ -55,9 +61,13 @@ services:
       - sonarqube_extensions:/opt/sonarqube/extensions
       - sonarqube_logs:/opt/sonarqube/logs
     environment:
-      SONARQUBE_JDBC_URL: jdbc:mysql://mysql:3306/sonarqube?useUnicode=true&serverTimezone=UTC
-      SONARQUBE_JDBC_USERNAME: ashrefbouden
-      SONARQUBE_JDBC_PASSWORD: ashrefbouden
+      SONAR_JDBC_URL: jdbc:mysql://mysql-achat:3306/sonarqube?useUnicode=true&serverTimezone=UTC
+      SONAR_JDBC_USERNAME: ashrefbouden
+      SONAR_JDBC_PASSWORD: ashrefbouden
+    depends_on:
+      - mysql
+    networks:
+      - achat-network
 
   nexus:
     image: sonatype/nexus3
@@ -67,6 +77,8 @@ services:
       - "8081:8081"
     volumes:
       - nexus_data:/nexus-data
+    networks:
+      - achat-network
 
   jenkins:
     image: jenkins/jenkins:lts
@@ -79,6 +91,8 @@ services:
     volumes:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - achat-network
 
   prometheus:
     image: prom/prometheus
@@ -89,6 +103,8 @@ services:
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
+    networks:
+      - achat-network
 
   grafana:
     image: grafana/grafana
@@ -98,6 +114,8 @@ services:
       - "3000:3000"
     volumes:
       - grafana_data:/var/lib/grafana
+    networks:
+      - achat-network
 
 volumes:
   mysql_data:
@@ -110,5 +128,5 @@ volumes:
   grafana_data:
 
 networks:
-  default:
+  achat-network:
     driver: bridge

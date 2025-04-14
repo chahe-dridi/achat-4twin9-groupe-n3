@@ -1,7 +1,12 @@
-global
-  scrape_interval 15s
-
-scrape_configs
-  - job_name 'prometheus'
-    static_configs
-      - targets ['localhost9090']
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: 'backend'
+    static_configs:
+      - targets: ['backend-achat:8089']
+  - job_name: 'frontend'
+    static_configs:
+      - targets: ['frontend-achat:80']
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['prometheus:9090']
