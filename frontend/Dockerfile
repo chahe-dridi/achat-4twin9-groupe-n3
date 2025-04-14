@@ -15,7 +15,7 @@ RUN npm install -g @angular/cli  # Installation globale de Angular CLI
 COPY . .
 
 # Compiler l'application Angular (génère /app/dist)
-RUN export NODE_OPTIONS=--openssl-legacy-provider && ng build
+RUN export NODE_OPTIONS=--openssl-legacy-provider && ng build --configuration production
 
 # Étape 2 : Serveur Nginx pour héberger l'application
 FROM nginx:alpine
