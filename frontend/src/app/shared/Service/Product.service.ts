@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient} from '@angular/common/http';
-import { catchError, tap } from 'rxjs/operators';  // Import des opérateurs RxJS
-import { throwError } from 'rxjs';  // Pour lancer des erreurs
-import { NGXLogger } from 'ngx-logger';  // Assurez-vous que NGXLogger est correctement importé
-import { Observable } from 'rxjs';
+ import { NGXLogger } from 'ngx-logger';   
 import { LoggerService } from './LoggerService';
+import { Observable, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 
 
 @Injectable({

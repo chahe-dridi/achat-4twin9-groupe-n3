@@ -1,12 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { ProductsComponent } from './products.component';
 import { of } from 'rxjs';
 import { Product } from '../shared/Model/Product';
 import { ProductService } from '../shared/Service/Product.service';
-import { FormsModule } from '@angular/forms'; // Ajoutez cette ligne
-
-import {  fakeAsync, tick } from '@angular/core/testing';
-
+ 
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;

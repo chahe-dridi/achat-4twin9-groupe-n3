@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {Product} from '../shared/Model/Product';
 import {ProductService} from '../shared/Service/Product.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+ 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -16,8 +15,11 @@ export class ProductsComponent implements OnInit {
   product!: Product;
   closeResult!: string;
 
-  constructor(private productService: ProductService, private modalService: NgbModal) {
-  }
+  constructor(
+    private readonly productService: ProductService,
+    private readonly modalService: NgbModal
+  ) {}
+  
 
   ngOnInit(): void {
     this.getAllProducts();
