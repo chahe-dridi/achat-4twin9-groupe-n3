@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   mysql:
     image: mysql:latest
@@ -8,27 +6,22 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: achatdb
-      MYSQL_USER: achatuser
-      MYSQL_PASSWORD: cyka
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 140111
     ports:
-      - "3307:3306"
+      - '3307:3306'
     volumes:
       - mysql_data:/var/lib/mysql
     command: --bind-address=0.0.0.0
 
   backend:
-<<<<<<< HEAD
-    image: khouloudbelhadj/achat-backend-belhadjkhouloud-4twin9
-=======
-    image: dark9040/achat-backend-chaherdridi-4twin9
-
->>>>>>> f76411cef0eacc6097bf5dd38975a387f12f19d7
+    image: wassimtriki/achat-backend-wassim-4twin9
     container_name: backend-achat
     restart: always
     depends_on:
       - mysql
     ports:
-      - "8089:8089"
+      - '8089:8089'
     volumes:
       - ./logs:/logs
     environment:
@@ -36,22 +29,13 @@ services:
       SPRING_DATASOURCE_USERNAME: achatuser
       SPRING_DATASOURCE_PASSWORD: cyka
 
-  frontend:
-<<<<<<< HEAD
-    image: khouloudbelhadj/achat-backend-belhadjkhouloud-4twin9
-=======
-    image: dark9040/achatfrontend-chaherdridi
->>>>>>> f76411cef0eacc6097bf5dd38975a387f12f19d7
-    ports:
-      - "8082:80"
-    depends_on:
-      - backend
-    volumes:
-      - ./logs/nginx:/var/log/nginx
+  # frontend:
+  #   image: wassimtriki/achat-backend-wassim-4twin9
+  #   ports:
+  #     - '8082:80'
+  #   depends_on:
+  #     - backend
+  #   volumes:
+  #     - ./logs/nginx:/var/log/nginx
 volumes:
-<<<<<<< HEAD
   mysql_data:
-=======
-  mysql_data:
-
->>>>>>> f76411cef0eacc6097bf5dd38975a387f12f19d7

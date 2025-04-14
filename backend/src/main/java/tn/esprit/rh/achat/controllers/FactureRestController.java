@@ -25,6 +25,7 @@ public class FactureRestController {
     @ResponseBody
     public List<Facture> getFactures() {
         List<Facture> list = factureService.retrieveAllFactures();
+        list.forEach(f -> System.out.println("Facture ID: " + f.getIdFacture()));
         return list;
     }
 

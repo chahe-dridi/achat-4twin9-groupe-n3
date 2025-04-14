@@ -36,6 +36,7 @@ public class Facture implements Serializable {
 	private Date dateDerniereModificationFacture;
 	private Boolean archivee;
 	@OneToMany(mappedBy = "facture")
+	@JsonIgnore
 	private Set<DetailFacture> detailsFacture;
     @ManyToOne
     @JsonIgnore
