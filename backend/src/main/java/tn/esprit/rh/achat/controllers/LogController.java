@@ -3,11 +3,6 @@ package tn.esprit.rh.achat.controllers;
 import org.springframework.web.bind.annotation.*;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/logs")
