@@ -1,6 +1,10 @@
 {
-  "name": "achat-frontend",
-  "version": "0.0.0",
+  "name": "achat-frontend-gofranename-4twin9-g3",
+  "version": "1.0.0",
+  "private": false,
+  "publishConfig": {
+    "registry": "http://localhost:8081/repository/npm-releases/"
+  },
   "scripts": {
     "ng": "ng",
     "start": "export NODE_OPTIONS=--openssl-legacy-provider && ng serve",
@@ -8,7 +12,7 @@
     "watch": "export NODE_OPTIONS=--openssl-legacy-provider && ng build --watch --configuration development",
     "test": "export NODE_OPTIONS=--openssl-legacy-provider && ng test"
   },
-  "private": true,
+
   "dependencies": {
     "@angular/animations": "~12.0.1",
     "@angular/common": "~12.0.1",

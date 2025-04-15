@@ -97,7 +97,6 @@ describe('OperateurComponent', () => {
       expect(component.form).toBeFalse();
     });
   });
-
   describe('deleteOperateur', () => {
     it('devrait supprimer un opérateur avec succès', () => {
       const idToDelete = 1;

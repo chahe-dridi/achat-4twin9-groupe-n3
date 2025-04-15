@@ -33,11 +33,13 @@ services:
 
   frontend:
     image: achatfrontend-gofraneabidi-4twin9
+    container_name: frontend-achat
     ports:
       - "4200:4200"
     depends_on:
       - backend
     volumes:
       - ./logs/nginx:/var/log/nginx
+
 volumes:
   mysql_data:
