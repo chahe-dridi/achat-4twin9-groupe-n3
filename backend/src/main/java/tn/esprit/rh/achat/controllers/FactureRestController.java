@@ -9,6 +9,8 @@ import tn.esprit.rh.achat.services.IFactureService;
 
 import java.util.Date;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 @RestController
@@ -17,6 +19,9 @@ import java.util.List;
 @CrossOrigin("*")
 public class FactureRestController {
 
+    private static final Logger logger = LoggerFactory.getLogger(FactureRestController.class);
+
+
     @Autowired
     IFactureService factureService;
 
@@ -24,15 +29,18 @@ public class FactureRestController {
     @GetMapping("/retrieve-all-factures")
     @ResponseBody
     public List<Facture> getFactures() {
+        logger.info("Fetching all factures...");
         List<Facture> list = factureService.retrieveAllFactures();
-        list.forEach(f -> System.out.println("Facture ID: " + f.getIdFacture()));
+        logger.debug("Returned {} factures", list.size());
         return list;
     }
+    
 
     // http://localhost:8089/SpringMVC/facture/retrieve-facture/8
     @GetMapping("/retrieve-facture/{facture-id}")
     @ResponseBody
     public Facture retrieveFacture(@PathVariable("facture-id") Long factureId) {
+        logger.info("Fetching facture with ID: {}", factureId);
         return factureService.retrieveFacture(factureId);
     }
 
@@ -40,9 +48,12 @@ public class FactureRestController {
     @PostMapping("/add-facture")
     @ResponseBody
     public Facture addFacture(@RequestBody Facture f) {
+        logger.info("Adding new facture with amount: {}", f.getMontantFacture());
         Facture facture = factureService.addFacture(f);
+        logger.debug("Facture added with ID: {}", facture.getIdFacture());
         return facture;
     }
+    
 
     /*
      * une facture peut etre annulé si elle a été saisie par erreur Pour ce
@@ -52,7 +63,9 @@ public class FactureRestController {
     @PutMapping("/cancel-facture/{facture-id}")
     @ResponseBody
     public void cancelFacture(@PathVariable("facture-id") Long factureId) {
+        logger.info("Cancelling facture with ID: {}", factureId);
         factureService.cancelFacture(factureId);
+        logger.debug("Facture with ID: {} cancelled", factureId);
     }
 
     // http://localhost:8089/SpringMVC/facture/getFactureByFournisseur/{fournisseur-id}

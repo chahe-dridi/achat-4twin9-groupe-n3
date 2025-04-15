@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   mysql:
     image: mysql:latest
@@ -6,8 +8,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: achatdb
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 140111
     ports:
       - '3307:3306'
     volumes:
@@ -29,13 +29,14 @@ services:
       SPRING_DATASOURCE_USERNAME: achatuser
       SPRING_DATASOURCE_PASSWORD: cyka
 
-  # frontend:
-  #   image: wassimtriki/achat-backend-wassim-4twin9
-  #   ports:
-  #     - '8082:80'
-  #   depends_on:
-  #     - backend
-  #   volumes:
-  #     - ./logs/nginx:/var/log/nginx
+  frontend:
+    image: wassimtriki/achat-frontend-wassim-4twin9
+    ports:
+      - '8082:80'
+    depends_on:
+      - backend
+    volumes:
+      - ./logs/nginx:/var/log/nginx
+
 volumes:
   mysql_data:

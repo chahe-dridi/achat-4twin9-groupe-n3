@@ -6,32 +6,36 @@ import { FactureService } from '../shared/Service/Facture.service';
 @Component({
   selector: 'app-facture',
   templateUrl: './facture.component.html',
-  styleUrls: ['./facture.component.css']
+  styleUrls: ['./facture.component.css'],
 })
 export class FactureComponent implements OnInit {
-
   listFactures: any;
   form: boolean = false;
   facture!: Facture;
   closeResult!: string;
 
-  constructor(private factureService: FactureService, private modalService: NgbModal) {
-  }
+  constructor(
+    private factureService: FactureService,
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit(): void {
+    this.logger.log('Facture component initialized');
     this.getAllFactures();
     this.facture = {
-      idFacture:null,
-      dateCreationFacture:null,
-      montantFacture:null,
-      dateDerniereModificationFacture:null,
-      montantRemise:null,
-      archivee:null
-    }
+      idFacture: null,
+      dateCreationFacture: null,
+      montantFacture: null,
+      dateDerniereModificationFacture: null,
+      montantRemise: null,
+      archivee: null,
+    };
   }
 
   getAllFactures() {
-    this.factureService.getAllFactures().subscribe(res => this.listFactures = res)
+    this.factureService
+      .getAllFactures()
+      .subscribe((res) => (this.listFactures = res));
   }
 
   addFacture(f: any) {
@@ -42,11 +46,16 @@ export class FactureComponent implements OnInit {
   }
 
   open(content: any) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
   }
 
   private getDismissReason(reason: any): string {
